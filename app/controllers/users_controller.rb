@@ -1,0 +1,3 @@
+class Users < ApplicationController
+  
+end
