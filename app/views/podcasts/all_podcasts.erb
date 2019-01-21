@@ -1,0 +1,8 @@
+<h2> <% User.all.each do |user| %> </h2>
+<h2> <%= user.username %> </h2>
+<ul>
+  <% user.podcasts.each do |podcast| %>
+  <li> <%= podcast.name %> </li>
+</ul>
+  <% end %>
+<% end %>
