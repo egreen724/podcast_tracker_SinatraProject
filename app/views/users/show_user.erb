@@ -1,0 +1,8 @@
+<!-- show page for a single user, displays list of podcasts -->
+
+<h2> <%= @user.username %></h2>
+<ul>
+  <% @user.podcasts.each do |podcast| %>
+  <li> <a href="/podcasts/<%=podcast.slug%>"><%= podcast.name %></a> </li>
+</ul>
+<% end %>

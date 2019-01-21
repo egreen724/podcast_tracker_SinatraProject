@@ -1,8 +1,11 @@
+<!-- displays all user and a list of podcasts when logged in -->
+
 <h2> <% User.all.each do |user| %> </h2>
-<h2> <%= user.username %> </h2>
+<h2><a href="/podcasts/<%=user.slug%>"><%= user.username %> </a></h2>
 <ul>
   <% user.podcasts.each do |podcast| %>
   <li> <%= podcast.name %> </li>
 </ul>
+<br>
   <% end %>
 <% end %>
