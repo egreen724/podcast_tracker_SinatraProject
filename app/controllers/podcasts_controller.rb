@@ -39,7 +39,7 @@ class PodcastsController < ApplicationController
 
   get "/podcasts/:id/edit" do #update
     if logged_in?
-      binding.pry 
+      binding.pry
       @podcast = Podcast.find_by_id(params[:id])
       if @podcast && @podcast.user == current_user
         erb :'/podcasts/edit_podcast'
@@ -68,4 +68,17 @@ class PodcastsController < ApplicationController
       redirect to "/login"
     end
   end
+
+  delete '/podcasts/:id/delete' do
+      if logged_in?
+        @podcast = Podcast.find_by_id(params[:id])
+        if @podcast && @podcast.user == current_user
+          @podcast.delete
+        end
+        redirect to "/users/#{@podcast.user.slug}"
+      else
+        redirect to '/login'
+      end
+    end
+
 end
