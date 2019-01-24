@@ -6,12 +6,13 @@
   <% @user.podcasts.each do |podcast| %>
   <li><a href='/podcasts/<%=podcast.id%>'><strong><%= podcast.title %></strong></a> </li>
     <ul>
-      <li><%= podcast.description %> </li>
+      <li>Description: <%= podcast.description %> </li>
     </ul>
     <form method="post" action="/podcasts/<%=podcast.id%>/delete">
       <input id="hidden" type="hidden" name="_method" value="DELETE">
       <input type="submit" value="Delete Podcast">
     </form>
+    <br>
   <% end %>
 </ul>
 
