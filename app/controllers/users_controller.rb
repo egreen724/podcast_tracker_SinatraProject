@@ -1,8 +1,4 @@
-require 'rack-flash'
-
 class UsersController < ApplicationController
-use Rack::Flash
-
   get '/signup' do
     if logged_in?
       redirect to '/podcasts'
@@ -12,12 +8,12 @@ use Rack::Flash
   end
 
   post '/signup' do
-    binding.pry
+
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      flash[:message] = "Please fill in the appropriate fields to create an account."
+      flash.now[:message] = "Please fill in the appropriate fields to create an account."
       redirect to '/signup' #add a flash message
-    elsif !params[:email].include?("@")
-      flash[:message] = "Please fill in the appropriate fields to create an account."
+    elsif !params[:user][:email].include?("@")
+      flash.now[:message] = "Please enter an accurate email address."
       redirect to '/signup'
     else
       @user = User.create(params[:user])
@@ -41,7 +37,7 @@ use Rack::Flash
       session[:user_id] = @user.id
       redirect to '/podcasts'
     else
-      flash[:message] = "Could not find an existing account. Please create an account."
+      flash.now[:message] = "Could not find an existing account. Please create an account."
       redirect to '/signup'
     end
   end

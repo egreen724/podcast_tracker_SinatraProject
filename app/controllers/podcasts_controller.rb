@@ -1,7 +1,4 @@
-require 'rack-flash'
-
 class PodcastsController < ApplicationController
-use Rack::Flash
 
   get "/podcasts" do #index
     @user = User.find_by_id(session[:user_id])
@@ -78,7 +75,7 @@ use Rack::Flash
         if @podcast && @podcast.user == current_user
           @podcast.delete
         else
-          flash[:message] = "You do not have access to delete this podcast."
+          flash.now[:message] = "You do not have access to delete this podcast."
           redirect to "/podcasts"
         end
       else
@@ -100,7 +97,7 @@ use Rack::Flash
 
     if logged_in?
       if @user.podcasts.any? {|podcast| podcast.title == params[:podcast][:title]}
-        flash[:message] = "This podcast is already on your list." #flash message that the podcast already exists
+        flash.now[:message] = "This podcast is already on your list." #flash message that the podcast already exists
         redirect to "/users/#{@user.slug}"
       else
         @podcast = Podcast.create(params[:podcast])
