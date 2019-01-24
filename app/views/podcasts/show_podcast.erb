@@ -1,15 +1,13 @@
 
-<h3> <%= @podcast.title %> </h3>
-<p> <%= @podcast.description %> </p>
+<h3>Title: <%= @podcast.title %> </h3>
+<p>Description: <%= @podcast.description %> </p>
 
 <form method="post" action="/podcasts/<%=@podcast.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
   <input type="submit" value="Delete Podcast">
 </form>
-
-<p>If you are logged in, please use the links below to edit or delete this podcast. Otherwise, click "Copy Podcast to my list" to add this podcast to your account. </p>
-<br>
 <a href="/podcasts/<%=@podcast.id%>/edit">Edit this podcast</a>
-<a href="/podcasts/<%=@podcast.id%>/delete">Delete this podcast</a>
-<a href="/podcasts">View Podcast Feed</a>
-<a href='/logout'>Logout</a>
+
+<br>
+<p>Click below to add this podcast to your account. </p>
+<a href="/podcasts/<%=@podcast.id%>/copy">Copy this podcast</a>

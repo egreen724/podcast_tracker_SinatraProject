@@ -8,10 +8,10 @@
 <h3>Feed: </h3>
 <h2> <% User.all.each do |user| %> </h2>
 <h4>Username: <a href="/users/<%=user.slug%>"><%= user.username %> </a></h4>
-<ul> Podcasts:
-  <% user.podcasts.each do |podcast| %>
+<h5> Podcasts: </h5>
+<ul> <% user.podcasts.each do |podcast| %>
   <li> <a href='/podcasts/<%=podcast.id%>'> <%= podcast.title %> </a> </li>
 </ul>
-<br>
   <% end %>
+  <br>
 <% end %>

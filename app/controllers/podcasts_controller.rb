@@ -102,7 +102,4 @@ class PodcastsController < ApplicationController
     end
   end
 
-  end
-
-
 end
