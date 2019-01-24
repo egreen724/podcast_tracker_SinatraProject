@@ -1,5 +1,13 @@
+body {
+  font-family: sans-serif;
+}
+
 #menu {
   background-color: grey;
+}
+
+#links {
+  float: right;
 }
 
 .container {

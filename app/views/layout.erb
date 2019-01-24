@@ -1,16 +1,56 @@
 <!doctype html>
 <html>
   <head>
-    <link rel=”stylesheet” type=”text/css” href=”/style.css” />
     <title>ListenUp</title>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+        margin: 0 auto;
+        width: 600px;
+      }
+
+      #menu {
+        background-color: grey;
+        color: white;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+        padding-left: 10px;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      li a:hover {
+        background-color: #111;
+      }
+
+
+  </style>
   </head>
+
   <body>
 
     <div class="container">
       <div id="menu">
-        <h1>ListenUp</h1>
-        <a href="/podcasts">View Podcast Feed</a>
-        <a href='/logout'>Logout</a>
+        <ul>
+          <li>ListenUp</li>
+          <li class="links"> <a href="/podcasts">View Podcast Feed</a></li>
+          <li class="links"> <a href='/logout'>Logout</a></li>
+        </ul>
+        </div>
       </div>
 
 
