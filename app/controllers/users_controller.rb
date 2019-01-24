@@ -29,7 +29,6 @@ class UsersController < ApplicationController
   end
 
   post '/login' do
-    
     @user = User.find_by(:username => params[:username])
 
     if @user && @user.authenticate(params[:password])
@@ -38,6 +37,12 @@ class UsersController < ApplicationController
     else
       redirect to '/signup'
     end
+  end
+
+  get '/users/:slug' do
+    @user = User.find_by_slug(params[:slug])
+
+    erb :"/users/show_user"
   end
 
 
