@@ -4,10 +4,10 @@
 
 <form method="post" action="/podcasts/<%=@podcast.id%>/delete">
   <input id="hidden" type="hidden" name="_method" value="DELETE">
-  <input type="submit" value="Delete Podcast">
+  <input class= "button" type="submit" value="Delete Podcast">
 </form>
-<a href="/podcasts/<%=@podcast.id%>/edit">Edit this podcast</a>
-
 <br>
-<p>Click below to add this podcast to your account. </p>
-<a href="/podcasts/<%=@podcast.id%>/copy">Copy this podcast</a>
+<a class="button" href="/podcasts/<%=@podcast.id%>/edit">Edit this podcast</a>
+<br>
+<br>
+<a class="button" href="/podcasts/<%=@podcast.id%>/copy">Copy this podcast to your list</a>
