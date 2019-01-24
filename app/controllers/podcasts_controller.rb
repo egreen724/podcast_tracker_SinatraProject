@@ -1,4 +1,7 @@
+require 'rack-flash'
+
 class PodcastsController < ApplicationController
+use Rack::Flash
 
   get "/podcasts" do #index
     @user = User.find_by_id(session[:user_id])
@@ -60,6 +63,7 @@ class PodcastsController < ApplicationController
           @podcast.update(params[:podcast])
           redirect to "/podcasts/#{params[:id]}"
         else
+          flash[:message] = "You do not have access to edit this podcast."
           redirect to "/podcasts"
         end
       end
@@ -73,8 +77,10 @@ class PodcastsController < ApplicationController
         @podcast = Podcast.find_by_id(params[:id])
         if @podcast && @podcast.user == current_user
           @podcast.delete
+        else
+          flash[:message] = "You do not have access to delete this podcast."
+          redirect to "/podcasts"
         end
-        redirect to "/users/#{@podcast.user.slug}"
       else
         redirect to '/login'
       end
