@@ -1,3 +1,7 @@
+<% if flash.has?(:message) %>
+  <%= flash[:message] %>
+<% end %>
+
 <h2>Copy Podcast to your Account:</h2>
 
 <form method = "post" action="/podcasts/<%=@podcast.id%>/copy">

@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   post '/signup' do
 
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
+       flash[:message] = "Please fill in the appropriate fields to create an account."
       redirect to '/signup' #add a flash message
     else
       @user = User.create(params[:user])
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/podcasts'
     else
+      flash[:message] = "Could not find an existing account. Please create an account."
       redirect to '/signup'
     end
   end
