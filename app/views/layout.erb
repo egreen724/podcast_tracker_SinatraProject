@@ -54,7 +54,7 @@
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: .75em;
+        font-size: 1em;
       }
 
       input[type=submit] {
@@ -66,6 +66,10 @@
         text-decoration: none;
         display: inline-block;
         font-size: .75em;
+      }
+
+      .flash {
+        color: black;
       }
 
   </style>
@@ -82,13 +86,6 @@
         </ul>
         </div>
       </div>
-
-      <% flash.keys.each do |type| %>
-        <div data-alert class="flash <%= type %> alert-box radius">
-          <%= flash[type] %>
-          <a href="#" class="close">&times;</a>
-        </div>
-      <% end %>
 
       <%= yield %>
 

@@ -97,7 +97,7 @@ class PodcastsController < ApplicationController
 
     if logged_in?
       if @user.podcasts.any? {|podcast| podcast.title == params[:podcast][:title]}
-        flash.now[:message] = "This podcast is already on your list." #flash message that the podcast already exists
+        flash.now[:message] = "This podcast is already on your list."
         redirect to "/users/#{@user.slug}"
       else
         @podcast = Podcast.create(params[:podcast])
