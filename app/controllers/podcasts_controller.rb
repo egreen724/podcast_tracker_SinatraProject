@@ -92,11 +92,15 @@ class PodcastsController < ApplicationController
   post '/podcasts/:id/copy' do
     @user = User.find_by_id(session[:user_id])
 
-    if logged_in? && !@user.podcasts.title.include?(params[:podcast][:title]) && !@user.podcasts.description.include?(params[:podcast][:description])
-      @podcast = Podcast.create(params[:podcast])
-      @user.podcasts << @podcast
-      @user.save
-      redirect to "/users/#{@user.slug}"
+    if logged_in?
+      if @user.podcasts.any? {|podcast| podcast.title == params[:podcast][:title]} #flash message that the podcast already exists
+        redirect to "/users/#{@user.slug}"
+      else
+        @podcast = Podcast.create(params[:podcast])
+        @user.podcasts << @podcast
+        @user.save
+        redirect to "/users/#{@user.slug}"
+      end
     else
       redirect to '/login'
     end
