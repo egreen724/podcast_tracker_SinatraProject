@@ -31,18 +31,16 @@ class PodcastsController < ApplicationController
     end
   end
 
-  get "/podcasts/:slug" do #read
-    if logged_in?
-      @podcast = Podcast.find_by_slug(params[:slug])
-      erb :'/podcasts/show_podcast'
-    else
-      redirect to "/login"
-    end
+  get "/podcasts/:id" do #read
+    @podcast = Podcast.find_by_id(params[:id])
+    erb :'/podcasts/show_podcast'
+
   end
 
-  get "/podcasts/:slug/edit" do #update
+  get "/podcasts/:id/edit" do #update
     if logged_in?
-      @podcast = Podcast.find_by_slug(params[:slug])
+      binding.pry 
+      @podcast = Podcast.find_by_id(params[:id])
       if @podcast && @podcast.user == current_user
         erb :'/podcasts/edit_podcast'
       else
@@ -53,15 +51,15 @@ class PodcastsController < ApplicationController
     end
   end
 
-  patch "/podcasts/:slug" do #update
+  patch "/podcasts/:id" do #update
     if logged_in?
       if params[:podcast][:title] == ""
-        redirect to "/podcasts/#{params[:slug]}/edit"
+        redirect to "/podcasts/#{params[:id]}/edit"
       else
-        @podcast = Podcast.find_by_slug(params[:slug])
+        @podcast = Podcast.find_by_id(params[:id])
         if @podcast && @podcast.user == current_user
           @podcast.update(params[:podcast])
-          redirect to "/podcasts/#{params[:slug]}"
+          redirect to "/podcasts/#{params[:id]}"
         else
           redirect to "/podcasts"
         end
