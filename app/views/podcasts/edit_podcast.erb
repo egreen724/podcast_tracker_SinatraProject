@@ -1,0 +1,11 @@
+<h2>Edit Podcast:</h2>
+
+<form method = "post" action="/podcasts/<%=@podcast.slug%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <label for="name">Podcast Title:</label>
+  <input type="text" id="title" name="podcast[title]">
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="podcast[description]">
+  <input type="submit" id="submit" value="Submit">
+
+</form>

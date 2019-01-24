@@ -10,7 +10,7 @@
 <h4>Username: <a href="/users/<%=user.slug%>"><%= user.username %> </a></h4>
 <ul> Podcasts:
   <% user.podcasts.each do |podcast| %>
-  <li> <%= podcast.title %> </li>
+  <li> <a href='/podcast/<%=podcast.slug%>'> <%= podcast.title %> </a> </li>
 </ul>
 <br>
   <% end %>

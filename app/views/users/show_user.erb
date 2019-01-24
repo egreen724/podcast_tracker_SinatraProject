@@ -4,7 +4,7 @@
 
 <ul>
   <% @user.podcasts.each do |podcast| %>
-  <li><strong><%= podcast.title %></strong> </li>
+  <li><a href='/podcast/<%=podcast.slug%>'><strong><%= podcast.title %></strong></a> </li>
     <ul>
       <li><%= podcast.description %> </li>
     </ul>
@@ -13,5 +13,5 @@
 
 <br>
 <a href="/podcasts/new">Add a new podcast</a>
-<a href="/podcasts">View All Podcasts</a>
+<a href="/podcasts">View Podcast Feed</a>
 <a href='/logout'>Logout</a>
