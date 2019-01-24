@@ -77,12 +77,18 @@
       <div>
         <ul id="menu">
           <li>ListenUp</li>
-          <li class="links"> <a href="/podcasts">View Podcast Feed</a></li>
+          <li class="links"> <a href="/podcasts">Home</a></li>
           <li class="links"> <a href='/logout'>Logout</a></li>
         </ul>
         </div>
       </div>
 
+      <% flash.keys.each do |type| %>
+        <div data-alert class="flash <%= type %> alert-box radius">
+          <%= flash[type] %>
+          <a href="#" class="close">&times;</a>
+        </div>
+      <% end %>
 
       <%= yield %>
 

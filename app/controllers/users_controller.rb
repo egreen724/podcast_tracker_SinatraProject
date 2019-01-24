@@ -10,10 +10,10 @@ class UsersController < ApplicationController
   post '/signup' do
 
     if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      flash.now[:message] = "Please fill in the appropriate fields to create an account."
+      flash.now[:warning] = "Please fill in the appropriate fields to create an account."
       redirect to '/signup' #add a flash message
     elsif !params[:user][:email].include?("@")
-      flash.now[:message] = "Please enter an accurate email address."
+      flash.now[:warning] = "Please enter an accurate email address."
       redirect to '/signup'
     else
       @user = User.create(params[:user])

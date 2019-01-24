@@ -60,7 +60,7 @@ class PodcastsController < ApplicationController
           @podcast.update(params[:podcast])
           redirect to "/podcasts/#{params[:id]}"
         else
-          flash[:message] = "You do not have access to edit this podcast."
+          flash[:warning] = "You do not have access to edit this podcast."
           redirect to "/podcasts"
         end
       end
@@ -75,7 +75,7 @@ class PodcastsController < ApplicationController
         if @podcast && @podcast.user == current_user
           @podcast.delete
         else
-          flash.now[:message] = "You do not have access to delete this podcast."
+          flash.now[:warning] = "You do not have access to delete this podcast."
           redirect to "/podcasts"
         end
       else
