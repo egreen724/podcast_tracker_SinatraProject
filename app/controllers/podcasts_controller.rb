@@ -81,9 +81,28 @@ class PodcastsController < ApplicationController
     end
 
   get '/podcasts/:id/copy' do
-    @podcast = Podcast.find_by_id(params[:id])
-
-     erb :'/podcasts/copy'
+    if logged_in?
+      @podcast = Podcast.find_by_id(params[:id])
+       erb :'/podcasts/copy'
+     else
+       redirect to '/login'
+     end
   end
+
+  post '/podcasts/:id/copy' do
+    @user = User.find_by_id(session[:user_id])
+
+    if logged_in? && !@user.podcasts.title.include?(params[:podcast][:title]) && !@user.podcasts.description.include?(params[:podcast][:description])
+      @podcast = Podcast.create(params[:podcast])
+      @user.podcasts << @podcast
+      @user.save
+      redirect to "/users/#{@user.slug}"
+    else
+      redirect to '/login'
+    end
+  end
+
+  end
+
 
 end
