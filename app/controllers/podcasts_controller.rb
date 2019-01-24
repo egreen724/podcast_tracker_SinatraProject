@@ -23,7 +23,6 @@ class PodcastsController < ApplicationController
     @user = User.find_by_id(session[:user_id])
 
     if logged_in?
-      binding.pry
       @podcast = Podcast.create(params[:podcast])
       @user.podcasts << @podcast
       @user.save

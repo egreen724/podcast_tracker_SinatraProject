@@ -2,7 +2,7 @@ class Podcast < ActiveRecord::Base
   belongs_to :user
 
   def slug
-    binding.pry 
+     
     self.title.downcase.gsub(" ","-")
   end
 
