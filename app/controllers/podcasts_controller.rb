@@ -80,4 +80,10 @@ class PodcastsController < ApplicationController
       end
     end
 
+  get '/podcasts/:id/copy' do
+    @podcast = Podcast.find_by_id(params[:id])
+
+     erb :'/podcasts/copy'
+  end
+
 end
