@@ -1,4 +1,4 @@
-class Podcast < ActiveRecord::Base 
-  has_many :users #belongs_to :users 
-  has_many :genres 
+class Podcast < ActiveRecord::Base
+  belongs_to :user
+  
 end
