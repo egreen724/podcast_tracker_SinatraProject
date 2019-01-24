@@ -39,7 +39,6 @@ class PodcastsController < ApplicationController
 
   get "/podcasts/:id/edit" do #update
     if logged_in?
-      binding.pry
       @podcast = Podcast.find_by_id(params[:id])
       if @podcast && @podcast.user == current_user
         erb :'/podcasts/edit_podcast'

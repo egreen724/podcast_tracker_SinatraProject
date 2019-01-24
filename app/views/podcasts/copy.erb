@@ -1,0 +1,11 @@
+<h2>Copy Podcast to your Account:</h2>
+
+<form method = "post" action="/podcasts/<%=@podcast.id%>">
+  <input id="hidden" type="hidden" name="_method" value="PATCH">
+  <label for="name">Podcast Title:</label>
+  <input type="text" id="title" name="podcast[title]" value ="<%=@podcast.title %>">
+  <label for="description">Description:</label>
+  <input type="text" id="description" name="podcast[description]" value ="<%=@podcast.description %>">
+  <input type="submit" id="submit" value="Submit">
+
+</form>

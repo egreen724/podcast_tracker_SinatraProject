@@ -2,6 +2,11 @@
 <h3> <%= @podcast.title %> </h3>
 <p> <%= @podcast.description %> </p>
 
+<form method="post" action="/podcasts/<%=@podcast.id%>/delete">
+  <input id="hidden" type="hidden" name="_method" value="DELETE">
+  <input type="submit" value="Delete Podcast">
+</form>
+
 <p>If you are logged in, please use the links below to edit or delete this podcast. Otherwise, click "Copy Podcast to my list" to add this podcast to your account. </p>
 <br>
 <a href="/podcasts/<%=@podcast.id%>/edit">Edit this podcast</a>

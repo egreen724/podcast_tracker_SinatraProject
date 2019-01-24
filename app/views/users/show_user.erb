@@ -8,6 +8,10 @@
     <ul>
       <li><%= podcast.description %> </li>
     </ul>
+    <form method="post" action="/podcasts/<%=podcast.id%>/delete">
+      <input id="hidden" type="hidden" name="_method" value="DELETE">
+      <input type="submit" value="Delete Podcast">
+    </form>
   <% end %>
 </ul>
 
