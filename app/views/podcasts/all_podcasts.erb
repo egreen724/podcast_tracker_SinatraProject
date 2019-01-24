@@ -11,10 +11,9 @@
   <h4>Username: <a href="/users/<%=user.slug%>"><%= user.username %> </a></h4>
   <h5> Podcasts: </h5>
   <% user.podcasts.each do |podcast| %>
-    <ul> 
+    <ul>
       <li class="feed"> <a href='/podcasts/<%=podcast.id%>'><%= podcast.title %></a> </li>
     </ul>
-      <% end %>
-  <br>
+    <% end %>
 <% end %>
 </div>
