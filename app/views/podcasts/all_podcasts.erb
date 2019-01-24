@@ -2,9 +2,13 @@
 
 <h2> Welcome, <%= @user.username%>! </h2>
 
+<a href="/users/<%=@user.slug%>">View Your Podcast List</a>
+<a href="/podcasts/new>">Add a new podcast</a>
+
+<h3>Feed: </h3>
 <h2> <% User.all.each do |user| %> </h2>
-<h2><a href="/podcasts/<%=user.slug%>"><%= user.username %> </a></h2>
-<ul>
+<h4>Username:<a href="/users/<%=user.slug%>"><%= user.username %> </a></h4>
+<ul> Podcasts:
   <% user.podcasts.each do |podcast| %>
   <li> <%= podcast.name %> </li>
 </ul>
