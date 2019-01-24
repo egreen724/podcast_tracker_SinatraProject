@@ -1,6 +1,6 @@
 <!-- show page for a single user, displays list of podcasts -->
 
-<h2> Welcome, <%= @user.username %>!</h2>
+<h2> <%= @user.username %>'s Podcasts:</h2>
 
 <ul>
   <% @user.podcasts.each do |podcast| %>
