@@ -79,7 +79,8 @@ class PodcastsController < ApplicationController
           redirect to "/users/#{@podcast.user.slug}"
           #try to add flash message
         else
-          redirect to "/podcasts"
+          flash[:message] = "You do not have access to delete this podcast."
+          redirect to "/podcasts/:id"
         end
       else
         redirect to '/login'

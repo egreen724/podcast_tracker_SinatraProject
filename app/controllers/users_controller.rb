@@ -9,11 +9,11 @@ class UsersController < ApplicationController
 
   post '/signup' do
 
-    if params[:username] == "" || params[:email] == "" || params[:password] == ""
-      flash.now[:warning] = "Please fill in the appropriate fields to create an account."
+    if params[:user][:username] == "" || params[:user][:email] == "" || params[:user][:password] == ""
+      flash[:message] = "Please fill in the appropriate fields to create an account."
       redirect to '/signup' #add a flash message
     elsif !params[:user][:email].include?("@")
-      flash.now[:warning] = "Please enter an accurate email address."
+      flash[:message] = "Please enter an accurate email address."
       redirect to '/signup'
     else
       @user = User.create(params[:user])
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect to '/podcasts'
     else
-      flash.now[:message] = "Could not find an existing account. Please create an account."
+      flash[:message] = "Could not find an existing account. Please create an account."
       redirect to '/signup'
     end
   end
