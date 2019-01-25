@@ -76,8 +76,10 @@ class PodcastsController < ApplicationController
         if @podcast && @podcast.user == current_user
           @podcast.delete
           redirect to "/users/#{@podcast.user.slug}"
-          #try to add flash message 
-        end
+          #try to add flash message
+        else
+          redirect to "/podcasts"
+        end 
       else
         redirect to '/login'
       end
