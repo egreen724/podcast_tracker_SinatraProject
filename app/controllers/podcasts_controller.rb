@@ -43,7 +43,8 @@ class PodcastsController < ApplicationController
       if @podcast && @podcast.user == current_user
         erb :'/podcasts/edit_podcast'
       else
-        redirect to "/podcasts"
+        flash[:message] = "You do not have access to edit this podcast."
+        redirect to "/podcasts/#{@podcast.id}"
       end
     else
       redirect to "/login"
