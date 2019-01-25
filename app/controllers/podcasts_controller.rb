@@ -60,8 +60,8 @@ class PodcastsController < ApplicationController
           @podcast.update(params[:podcast])
           redirect to "/podcasts/#{params[:id]}"
         else
-          flash[:warning] = "You do not have access to edit this podcast."
-          redirect to "/podcasts"
+          flash[:message] = "You do not have access to edit this podcast."
+          redirect to "/podcasts/:id"
         end
       end
     else
@@ -79,7 +79,7 @@ class PodcastsController < ApplicationController
           #try to add flash message
         else
           redirect to "/podcasts"
-        end 
+        end
       else
         redirect to '/login'
       end
