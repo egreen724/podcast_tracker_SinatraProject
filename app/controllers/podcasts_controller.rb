@@ -72,11 +72,11 @@ class PodcastsController < ApplicationController
   delete '/podcasts/:id/delete' do
       if logged_in?
         @podcast = Podcast.find_by_id(params[:id])
+
         if @podcast && @podcast.user == current_user
           @podcast.delete
-        else
-          flash.now[:warning] = "You do not have access to delete this podcast."
-          redirect to "/podcasts"
+          redirect to "/users/#{@podcast.user.slug}"
+          #try to add flash message 
         end
       else
         redirect to '/login'
