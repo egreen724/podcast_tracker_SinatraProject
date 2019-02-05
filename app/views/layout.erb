@@ -3,11 +3,24 @@
   <head>
     <title>ListenUp</title>
     <style type="text/css">
+    
       body {
         font-family: sans-serif;
         margin: 0 auto;
-        width: 600px;
-        background_image: url("https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwibz-z7qaXgAhVIhuAKHdsCAEYQjRx6BAgBEAU&url=https%3A%2F%2Fwww.pexels.com%2Fphoto%2Fheadphones-man-music-person-374777%2F&psig=AOvVaw2NXv-o_Z-jbZF6ZYJrXPJj&ust=1549481324225458");
+      }
+
+      html { 
+        background: url(../images/uP0Z6ye.jpg) no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+
+      #home_screen {
+        margin: auto;
+        width: 600px; 
+        text-align: center;
       }
 
       #menu {
@@ -85,7 +98,6 @@
 
   <body>
 
-    <div class="container">
       <div>
         <ul id="menu">
           <li><img id="logo" src="/images/1nxPS1G.jpg"></li>
@@ -94,9 +106,9 @@
           <li class="links"> <a href='/logout'>Logout</a></li>
           <li class="links"> <a href="/signup">Sign Up</a></li>
         </ul>
-        </div>
       </div>
 
+    
       <div class="wrapper">
       <div><% if flash[:message] %>
         <div style="background-color:#c2f0f0;" align="middle" >
