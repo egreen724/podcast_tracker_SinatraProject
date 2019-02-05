@@ -1,9 +1,11 @@
 <!-- displays all user and a list of podcasts when logged in -->
-
+<div class="prompts">
 <h2> Welcome, <%= @user.username%>! </h2>
 
 <a class="button" href="/users/<%=@user.slug%>">View Your Podcast List</a>
+<br>
 <a class="button" href="/podcasts/new">Add a new podcast</a>
+</div>
 
 <div class="feed_container">
 <h3>Feed: </h3>

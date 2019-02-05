@@ -1,4 +1,4 @@
-
+<div class="feed_container">
 <h3>Title: <%= @podcast.title %> </h3>
 <p>Description: <%= @podcast.description %> </p>
 
@@ -7,7 +7,7 @@
   <input class= "button" type="submit" value="Delete Podcast">
 </form>
 <br>
-<a class="button" href="/podcasts/<%=@podcast.id%>/edit">Edit this podcast</a>
+<a class="button" href="/podcasts/<%=@podcast.id%>/edit">Edit</a>
 <br>
-<br>
-<a class="button" href="/podcasts/<%=@podcast.id%>/copy">Copy this podcast to your list</a>
+<a class="button" href="/podcasts/<%=@podcast.id%>/copy">Copy to your list</a>
+</div>
