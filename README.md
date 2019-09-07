@@ -17,5 +17,5 @@ To use this app, just clone, run bundle install, and then run shotgun.
 
 ## Screenshots
 
-![Homepage Screenshot](https://imgur.com/rbxdchR)
-![Podcast Feed](https://imgur.com/nvdymR2)
+![Homepage Screenshot](https://i.imgur.com/rbxdchR.png)
+![Podcast Feed](https://i.imgur.com/nvdymR2.png)
