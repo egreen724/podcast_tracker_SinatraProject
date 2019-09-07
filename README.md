@@ -1,8 +1,8 @@
-# podcast_tracker_SinatraProject
+# ListenUp, Sinatra Portfolio Project
 
 ## Motivation and Features
 
-The ListenUp is a web-based Sinatra app that allows users to track the podcasts that they are currently listening to and follow other users through the "podcast feed". Users can add a description of why they listen to a certain podcast and find inspiration from others to expand their repertoire. ListenUp was created as a portfolio project in the Flatiron School's Full Stack Software Engineering program. The goal was to build a CRUD, MVC app using Sinatra.
+ListenUp is a web-based Sinatra app that allows users to track the podcasts that they are currently listening to and follow other users through the "podcast feed". Users can add a description of why they listen to a certain podcast and find inspiration from others to expand their repertoire. ListenUp was created as a portfolio project in the Flatiron School's Full Stack Software Engineering program. The goal was to build a CRUD, MVC app using Sinatra.
 
 ## Technologies
 * Sinatra
