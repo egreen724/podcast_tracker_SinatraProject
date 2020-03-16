@@ -11,17 +11,10 @@ gem 'pry'
 gem 'bcrypt'
 gem "tux"
 gem 'sinatra-flash'
+gem 'pg'
+gem 'activerecord-postgresql-adapter'
 
 
-
-group :development do
-   gem 'sqlite3'
-end
-
-group :production do
-   gem 'pg'
-   gem 'activerecord-postgresql-adapter'
-end
 
 group :test do
   gem 'rspec'
