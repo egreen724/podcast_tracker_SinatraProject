@@ -1,10 +1,30 @@
+# development:
+#   adapter: sqlite3
+#   database: db/development.sqlite
+#
+# production:
+#   adapter: postgresql
+#   database: mydb
+#   host: localhost
+#   pool: 5
+#   timeout: 5000
+
 development:
   adapter: sqlite3
   database: db/development.sqlite
-
-production:
-  adapter: postgresql
-  database: mydb
   host: localhost
   pool: 5
+  timeout: 5000
+
+# test:
+#   adapter: sqlite3
+#   database: database.db
+
+production:
+  url: <%= ENV['DATABASE_URL'] %>
+  adapter: postgresql
+  database: listenup_test
+  pool: 5
+  username: erin
+  password:
   timeout: 5000
