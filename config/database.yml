@@ -1,27 +1,29 @@
 
-
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite
-#   host: localhost
+# default:
+#   url: <%= ENV['DATABASE_URL'] %>
+#   adapter: postgresql
+#   database: mydb_dev
 #   pool: 5
+#   username: erin
+#   password:
+#   timeout: 5000
+#
+#
+# production:
+#   url: <%= ENV['DATABASE_URL'] %>
+#   adapter: postgresql
+#   database: mydb_prod
+#   pool: 5
+#   username: erin
+#   password:
 #   timeout: 5000
 
 development:
-  url: <%= ENV['DATABASE_URL'] %>
-  adapter: postgresql
-  database: mydb_dev
+  adapter: sqlite3
+  encoding: unicode
+  database: db/development.sqlite3
   pool: 5
-  username: erin
-  password:
-  timeout: 5000
-
-
 production:
-  url: <%= ENV['DATABASE_URL'] %>
   adapter: postgresql
-  database: mydb_prod
+  encoding: unicode
   pool: 5
-  username: erin
-  password:
-  timeout: 5000
