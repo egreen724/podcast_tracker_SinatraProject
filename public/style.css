@@ -1,16 +1,111 @@
-body {
-  font-family: sans-serif;
-}
-
-#menu {
-  background-color: grey;
-}
-
-#links {
-  float: right;
-}
 
 .container {
   margin: 0 auto;
   width: 800 px;
+}
+
+body {
+  font-family: sans-serif;
+  margin: auto;
+}
+
+html {
+  background: url(../images/uP0Z6ye.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#home_screen {
+  margin: auto;
+  width: 600px;
+  text-align: center;
+}
+
+#menu {
+  list-style-type: none;
+  margin: auto;
+  padding: 0;
+  background-color: navy;
+  color: white;
+}
+
+#menu li {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+#logo {
+  height: 50px;
+  width: auto;
+  padding: 10px 5px 5px 5px;
+}
+
+#menu li a {
+  display: block;
+  color: white;
+  float: right;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+#menu li a:hover {
+  color: grey;
+}
+
+#feed {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.prompts {
+  margin: auto;
+  width: 50%;
+
+}
+
+p.prompts {
+  text-align: center;
+}
+
+.feed_container {
+  border: 2px solid #DCDCDC;
+  padding: 2px 5px 5px 5px;
+  margin: 20px auto;
+  width: 75%;
+  background-color: white;
+  opacity: 0.85;
+}
+
+a.button {
+  background-color: navy;
+  border-radius: 5px;
+  color: white;
+  padding: 14px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: block;
+  font-size: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  width: 200px;
+}
+
+input[type=submit] {
+  background-color: grey;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: .75em;
+}
+
+.flash {
+  color: black;
 }

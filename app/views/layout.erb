@@ -2,15 +2,16 @@
 <html>
   <head>
     <title>ListenUp</title>
+    <!-- <link rel='stylesheet' type='text/css' href='style.css'> -->
     <style type="text/css">
-    
+
       body {
         font-family: sans-serif;
         margin: auto;
       }
 
-      html { 
-        background: url(../images/uP0Z6ye.jpg) no-repeat center center fixed; 
+      html {
+        background: url(../images/uP0Z6ye.jpg) no-repeat center center fixed;
         -webkit-background-size: cover;
         -moz-background-size: cover;
         -o-background-size: cover;
@@ -19,7 +20,7 @@
 
       #home_screen {
         margin: auto;
-        width: 600px; 
+        width: 600px;
         text-align: center;
       }
 
@@ -52,18 +53,18 @@
       }
 
       #menu li a:hover {
-        background-color: #111;
+        color: grey;
       }
 
       #feed {
         list-style-type: none;
         margin: 0;
-        padding: 0;
+        padding: 10px;
       }
 
       .prompts {
         margin: auto;
-        width: 50%; 
+        width: 50%;
       }
 
       .feed_container {
@@ -72,7 +73,7 @@
         margin: 20px auto;
         width: 75%;
         background-color: white;
-        opacity: 0.85; 
+        opacity: 0.85;
       }
 
       a.button {
@@ -86,6 +87,7 @@
         font-size: 1em;
         margin-left: auto;
         margin-right: auto;
+        margin-top: 10px;
         width: 200px;
       }
 
@@ -119,7 +121,7 @@
         </ul>
       </div>
 
-    
+
       <div class="wrapper">
       <div><% if flash[:message] %>
         <div style="background-color:#c2f0f0;" align="middle" >
